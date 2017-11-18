@@ -1,0 +1,57 @@
+{
+  "goodsList":[
+    {
+      "good_id": 1,
+      "backTest":1.97,
+      "historyEarnings":97.74,
+      "todayEarnings":1.97,
+      "price":99,
+      "sellCount":430,
+      "valid":true
+    },
+    {
+      "good_id": 2,
+      "backTest":1.97,
+      "historyEarnings":56.35,
+      "todayEarnings":1.45,
+      "price":66,
+      "sellCount":236,
+      "valid":true
+    },
+    {
+      "good_id": 3,
+      "backTest":1.97,
+      "historyEarnings":95.46,
+      "todayEarnings":1.59,
+      "price":98,
+      "sellCount":6666,
+      "valid":false
+    }
+  ],
+  "user": {
+    "username": "myname",
+    "authority":[1,2],
+    "point":1000,
+    "earnings":415643213,
+    "inviteCode":"XKJFGDKLJ",
+    "good_id":[1,2,3]
+  },
+  "goodDetail":{
+    "position":[
+      {
+        "name":"招商银行",
+        "code":"60036.XSHG",
+        "count":1400,
+        "cost":25.88,
+        "newPrice":26.05
+      },
+      {
+        "name":"江南嘉捷",
+        "code":"601313.JNJJ",
+        "count":1400,
+        "cost":20.4,
+        "newPrice":30.55
+      }
+    ]
+  }
+}

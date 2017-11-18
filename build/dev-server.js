@@ -22,6 +22,35 @@ const autoOpenBrowser = !!config.dev.autoOpenBrowser
 const proxyTable = config.dev.proxyTable
 
 const app = express()
+// 引入模拟数据
+const appData = require('../data.json')
+const goodsList = appData.goodsList
+const user = appData.user
+const goodDetail = appData.goodDetail
+
+// 路由对象
+const apiRoutes = express.Router();
+apiRoutes.get('/goodsList', function (req,res) {
+  res.json({
+    errno:0,
+    data:goodsList
+  });
+});
+apiRoutes.get('/user', function (req,res) {
+  res.json({
+    errno:0,
+    data:user
+  });
+});
+apiRoutes.get('/goodDetail', function (req,res) {
+  res.json({
+    errno:0,
+    data:goodDetail
+  });
+});
+
+app.use('/api', apiRoutes);
+
 const compiler = webpack(webpackConfig)
 
 const devMiddleware = require('webpack-dev-middleware')(compiler, {
