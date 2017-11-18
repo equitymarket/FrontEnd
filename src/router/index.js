@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Strategy from 'components/strategy/strategy'
-import Cart from 'components/cart/cart'
+import Mainpage from 'components/mainpage/mainpage'
+import Mystrategy from 'components/mystrategy/mystrategy'
 import Personal from 'components/personal/personal'
 
 Vue.use(Router)
@@ -10,15 +10,15 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/strategy'
+      redirect: '/mainpage'
     },
     {
-      path: '/strategy',
-      component: Strategy
+      path: '/mainpage',
+      component: Mainpage
     },
     {
-      path: '/rank',
-      component: Cart
+      path: '/mystrategy',
+      component: Mystrategy
     },
     {
       path: '/personal',

@@ -8,7 +8,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-import Navi from 'components/rank/rank'
+import Navi from 'components/navi/navi'
 export default {
   components: {
     Navi
