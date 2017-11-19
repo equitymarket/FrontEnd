@@ -2,7 +2,7 @@
   "goodsList":[
     {
       "good_id": 1,
-      "backTest":1.97,
+      "backTest":1.92,
       "historyEarnings":97.74,
       "todayEarnings":1.97,
       "price":99,
@@ -11,7 +11,7 @@
     },
     {
       "good_id": 2,
-      "backTest":1.97,
+      "backTest":1.93,
       "historyEarnings":56.35,
       "todayEarnings":1.45,
       "price":66,
@@ -20,7 +20,7 @@
     },
     {
       "good_id": 3,
-      "backTest":1.97,
+      "backTest":1.95,
       "historyEarnings":95.46,
       "todayEarnings":1.59,
       "price":98,
@@ -29,7 +29,7 @@
     },
     {
       "good_id": 4,
-      "backTest":1.97,
+      "backTest":1.94,
       "historyEarnings":95.46,
       "todayEarnings":1.59,
       "price":98,
@@ -38,7 +38,7 @@
     },
     {
       "good_id": 5,
-      "backTest":1.97,
+      "backTest":1.93,
       "historyEarnings":95.46,
       "todayEarnings":1.59,
       "price":98,
