@@ -22,8 +22,8 @@
         </div>
       </div>
       <div class="rank">
-        <span class="type active" @click="changeSort(0)">按收益排序</span>
-        <span class="type" @click="changeSort(1)">按回测排序</span>
+        <span class="type" @click="changeSort(0)" :class="{'active':(sortType!== 1)}">按收益排序</span>
+        <span class="type" @click="changeSort(1)" :class="{'active':(sortType===1)}">按回测排序</span>
       </div>
       <div class="strategy" v-for="(good, index) in goods">
         <div class="tap">
@@ -65,7 +65,7 @@
     data () {
       return {
         goods: [],
-        sortType: 0
+        sortType: NaN
       }
     },
     created () {
@@ -74,8 +74,7 @@
     methods: {
       changeSort (type) {
         this.sortType = type
-        console.log(this.sortType)
-        this._nomalizeList(this.goods)
+        this.goods = this._nomalizeList(this.goods)
       },
       _get_data () {
         this.axios.get('/api/goodsList').then(res => {
@@ -90,9 +89,13 @@
       },
       _nomalizeList (list) {
         let sortList = []
-        list.forEach(item => {
-          sortList.push(item)
-        })
+        if (!this.sortType) {
+          list.forEach(item => {
+            sortList.push(item)
+          })
+        } else {
+          sortList = list
+        }
         if (this.sortType === 0) {
           sortList.sort((a, b) => {
             return b.historyEarnings - a.historyEarnings
@@ -108,6 +111,11 @@
         let hook = document.getElementById('hook')
         let height = hook.clientHeight + 45 + 46
         hook.style.height = height + 'px'
+      }
+    },
+    computed: {
+      _changeDom () {
+        return this.goods
       }
     },
     components: {

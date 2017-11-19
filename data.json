@@ -21,7 +21,7 @@
     {
       "good_id": 3,
       "backTest":1.95,
-      "historyEarnings":95.46,
+      "historyEarnings":93.46,
       "todayEarnings":1.59,
       "price":98,
       "sellCount":6666,
@@ -30,7 +30,7 @@
     {
       "good_id": 4,
       "backTest":1.94,
-      "historyEarnings":95.46,
+      "historyEarnings":91.46,
       "todayEarnings":1.59,
       "price":98,
       "sellCount":6666,
@@ -39,7 +39,7 @@
     {
       "good_id": 5,
       "backTest":1.93,
-      "historyEarnings":95.46,
+      "historyEarnings":99.46,
       "todayEarnings":1.59,
       "price":98,
       "sellCount":6666,
@@ -48,7 +48,7 @@
     {
       "good_id": 6,
       "backTest":1.97,
-      "historyEarnings":95.46,
+      "historyEarnings":92.46,
       "todayEarnings":1.59,
       "price":98,
       "sellCount":6666,
