@@ -1,5 +1,5 @@
 <template>
-  <div class="mainpage">
+  <div class="mainpage" ref="mainpage">
     <header-bar :header="header"></header-bar>
     <div class="incomes-wrap">
       <div class="col-xs-2 item">
@@ -25,28 +25,28 @@
       <span class="type active">按收益排序</span>
       <span class="type">按回测排序</span>
     </div>
-    <div class="strategy">
+    <div class="strategy" v-for="(good, index) in goods">
       <div class="tap">
-        <span class="tap1">1
+        <span class="tap1">{{index+1}}
           <span class="tap2"></span>
         </span>
-        <span class="title">策略1</span>
+        <span class="title">策略{{index+1}}</span>
       </div>
       <div class="detail">
         <div class="col-xs-3">
-          <span class="top">1.97%</span>
-          <span class="bottom">最大回顾</span>
+          <span class="top">{{good.backTest}}%</span>
+          <span class="bottom">最大回测</span>
         </div>
         <div class="col-xs-3">
-          <span class="top">97.74%</span>
+          <span class="top">{{good.historyEarnings}}%</span>
           <span class="bottom">累计收益</span>
         </div>
         <div class="col-xs-3">
-          <span class="top">1.97%</span>
+          <span class="top">{{good.todayEarnings}}%</span>
           <span class="bottom">今天收益</span>
         </div>
         <div class="col-xs-3">
-          <span class="top">￥99/月</span>
+          <span class="top">￥{{good.price}}/月</span>
           <span class="bottom">价格</span>
         </div>
       </div>
@@ -64,12 +64,35 @@
   export default {
     data () {
       return {
-        header: '首页'
+        header: '首页',
+        goods: {},
+        sortType: 0
       }
     },
-    method:{
-
-    }
+    created () {
+      this._get_data()
+    },
+    methods: {
+      _get_data () {
+        this.axios.get('/api/goodsList').then(res => {
+          if (res.data.errno === 0) {
+            this.goods = this._nomalizeList(res.data)
+          }
+        })
+      },
+      _nomalizeList (list) {
+        let sortList = []
+        list.data.forEach(item => {
+          sortList.push(item)
+        })
+        if (this.sortType === 0) {
+          sortList.sort((a, b) => {
+            return a.historyEearnings - b.historyEearnings
+          })
+        }
+        return sortList
+      }
+    },
     components: {
       HeaderBar
     }
@@ -78,6 +101,10 @@
 
 <style lang="stylus" ref="stylesheet/stylus">
   .mainpage
+    position:fixed
+    top: 46px
+    width:100%
+    bottom:0
     .incomes-wrap
       width:100%
       height: 50px

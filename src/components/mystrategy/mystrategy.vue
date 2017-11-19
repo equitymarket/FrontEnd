@@ -9,7 +9,8 @@
   export default {
     data () {
       return {
-        header: '我的行情'
+        header: '我的行情',
+        user: []
       }
     },
     components: {

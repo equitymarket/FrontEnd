@@ -3,12 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 import fastclick from 'fastclick'
 import 'common/style/reset.styl'
 
 Vue.config.productionTip = false
 
 fastclick.attach(document.body)
+Vue.use(VueAxios, axios)
 
 /* eslint-disable no-new */
 new Vue({

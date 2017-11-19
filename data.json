@@ -26,6 +26,33 @@
       "price":98,
       "sellCount":6666,
       "valid":false
+    },
+    {
+      "good_id": 4,
+      "backTest":1.97,
+      "historyEarnings":95.46,
+      "todayEarnings":1.59,
+      "price":98,
+      "sellCount":6666,
+      "valid":false
+    },
+    {
+      "good_id": 5,
+      "backTest":1.97,
+      "historyEarnings":95.46,
+      "todayEarnings":1.59,
+      "price":98,
+      "sellCount":6666,
+      "valid":false
+    },
+    {
+      "good_id": 6,
+      "backTest":1.97,
+      "historyEarnings":95.46,
+      "todayEarnings":1.59,
+      "price":98,
+      "sellCount":6666,
+      "valid":false
     }
   ],
   "user": {

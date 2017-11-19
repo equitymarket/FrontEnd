@@ -19,6 +19,7 @@
 <style lang="stylus" ref="stylesheet/stylus">
   .nav
     position:fixed
+    z-index:50
     height:45px
     line-height 45px
     width:100%

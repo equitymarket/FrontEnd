@@ -16,6 +16,10 @@
 
 <style lang="stylus" ref="stylesheet/stylus">
   .head-bar
+    position:fixed
+    top: 0
+    lef: 0
+    width:100%
     background:rgb(157,37,27)
     padding:15px 15px
     &.head-bar .title
